@@ -1,0 +1,13 @@
+name: NetworkTokens
+main: me.xTDKx.NetworkTokens.Main
+version: 1.0
+author: xTDKx
+commands:
+    networktokens:
+      description: Main command for Network Tokens.
+    nt:
+      description: Main command for Network Tokens.
+permissions:
+    networktokens.reload:
+      description: Permission to reload config files.
+      default: op

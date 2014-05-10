@@ -1,0 +1,23 @@
+##############################################
+##                                          ##
+##              Network Tokens              ##
+##                By: xTDKx                 ##
+##                                          ##
+##############################################
+##                                          ##
+##             Global Variables             ##
+## %Tokens% = Amount of tokens a player has ##
+##                                          ##
+##############################################
+# Global Variables are variables that can be used in any message throughout the entire messages file.
+
+playerNotFound: '&3Player not found.'
+tokensBalance: '&3Your current token balance is %Tokens%.'
+tokensBalanceOther: "&3%Player%'s current balance is %Tokens%."
+addedTokens: '&3Added %AddedTokens% token(s) to your balance. You know have %Tokens% token(s).'
+addedTokensOther: "&3Added %AddedTokens% token(s) to %AddedPlayer%'s balance. They now have %Tokens% tokens(s)."
+removedTokens: '&3Removed %RemovedTokens% token(s) from your balance. You now have %Tokens% token(s).'
+removedTokensOther: "&3Removed %RemovedTokens% token(s) from %RemovedPlayer%'s balance. They now have %Tokens% token(s)."
+setTokens: '&3You set your current balance to %Tokens%.'
+setTokensOther: "&3Set %SetPlayer%'s balance to %SetTokens%."
+unknownCommand: '&3Unknown command, use /nt help for help!'
