@@ -15,18 +15,22 @@ public class Listeners implements Listener{
         plugin = p;
     }
 
-    TokenSQL sql = new TokenSQL(plugin);
 
-    public void giveScoreboard(Player player) {
-        ScoreboardManager manager = Bukkit.getScoreboardManager();
-        Scoreboard board = manager.getNewScoreboard();
+    public static ScoreboardManager manager;
+    public static Scoreboard board;
+    public static Objective objective;
+    public static Score score;
 
-        Objective objective = board.registerNewObjective("board", "dummy");
+    /*public void giveScoreboard(Player player) {
+        manager = Bukkit.getScoreboardManager();
+        board = manager.getNewScoreboard();
+
+        objective = board.registerNewObjective("board", "dummy");
         objective.setDisplaySlot(DisplaySlot.SIDEBAR);
-        objective.setDisplayName(/*ChatColor.translateAlternateColorCodes('&',plugin.getConfig().getString("Scoreboard Title"))*/"Jim");
+        objective.setDisplayName(ChatColor.translateAlternateColorCodes('&',plugin.getConfig().getString("Scoreboard Title"))"Jim");
 
         for (String score : plugin.getConfig().getStringList("Scoreboard Layout")) {
-            Score score1 = objective.getScore(ChatColor.translateAlternateColorCodes('&', score).replace("%Tokens%", Integer.toString(sql.getTokens(player))));
+            score1 = objective.getScore(ChatColor.translateAlternateColorCodes('&', score).replace("%Tokens%", Integer.toString(sql.getTokens(player))));
             score1.setScore(0);
 
             if (score.equalsIgnoreCase("%TokensFullLine%")) {
@@ -34,13 +38,13 @@ public class Listeners implements Listener{
                 score2.setScore(sql.getTokens(player));
             }
         }
-    }
+    }*/
 
     public void giveBoard(Player player, int balance){
-        ScoreboardManager manager = Bukkit.getScoreboardManager();
-        Scoreboard board = manager.getNewScoreboard();
+        manager = Bukkit.getScoreboardManager();
+        board = manager.getNewScoreboard();
 
-        Objective objective = board.registerNewObjective("test", "dummy");
+        objective = board.registerNewObjective("test", "dummy");
         objective.setDisplaySlot(DisplaySlot.SIDEBAR);
         objective.setDisplayName(ChatColor.translateAlternateColorCodes('&',plugin.getConfig().getString("Scoreboard Title")));
 
@@ -52,18 +56,13 @@ public class Listeners implements Listener{
 
                 if (entry.length() > 15) {
                     entry = entry.substring(0, 15);
-                    Score score = objective.getScore(ChatColor.translateAlternateColorCodes('&', entry).replace("%Tokens%", Integer.toString(balance)).replace("%NewLine%", " "));
+                    score = objective.getScore(ChatColor.translateAlternateColorCodes('&', entry).replace("%Tokens%", Integer.toString(balance)).replace("%NewLine%", " "));
                     score.setScore(i);
                 } else {
                     Score score = objective.getScore(ChatColor.translateAlternateColorCodes('&', entry).replace("%Tokens%", Integer.toString(balance)).replace("%NewLine%", " "));
                     score.setScore(i);
                 }
-
         }
-
-
-            player.setScoreboard(board);
-
     }
 
 

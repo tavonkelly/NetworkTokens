@@ -15,7 +15,7 @@ import java.sql.DriverManager;
 import java.util.HashMap;
 import java.util.logging.Logger;
 
-public class Main extends JavaPlugin{
+public class Main extends JavaPlugin {
     public static Main plugin;
     Logger logger = Logger.getLogger("Minecraft");
     HashMap<String, Long> cooldowns = new HashMap<String, Long>();
@@ -29,26 +29,20 @@ public class Main extends JavaPlugin{
         getConfig().options().copyDefaults(true);
         saveDefaultConfig();
 
-        Bukkit.getScheduler().scheduleSyncRepeatingTask(this, new Runnable() {
-            @Override
-            public void run() {
-                for(Player player : Bukkit.getOnlinePlayers()){
-                    listeners.giveBoard(player, sql.getTokens(player));
-                }
+        if (sql.canConnect()) {
+            try {
+                sql.tableCheck();
+            } catch (Exception e) {
+                logger.warning("Table creation failed");
             }
-        }, 40L, 100L);
-        //f(sql.canConnect()) {
-        try {
-            sql.tableCheck();
-        } catch (Exception e) {
-            logger.warning("Table creation failed");
-        }
-    }
-        /*}else{
+
+        } else {
             logger.warning("[Network Tokens] Unable to connect to database, disabling plugin.");
             Bukkit.getPluginManager().disablePlugin(this);
         }
-    }*/
+    }
+
+
 
     public void disablePlugin(){
         Bukkit.getPluginManager().disablePlugin(this);

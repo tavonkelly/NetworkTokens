@@ -20,17 +20,3 @@ Check Updates: true
 
 # The amount of Network Tokens a player gets the first time they join the server.
 Initial Amount: 0
-
-
-# Show a scoreboard stating the amount of Network Tokens a player has.
-Enable Scoreboard: true
-
-# Layout of Network Tokens scoreboard. The above option must be enabled.
-# You can customize the actual messages displayed in the messages.yml file.
-Scoreboard Title: '&eYour &bNT &eStats'
-Scoreboard Layout:
-- '&bYour Tokens'
-- '%Tokens%'
-- '&eBuy more at example.com!'
-- '&6Or vote for us at minecraftservers.org'
-- '%TokensFullLine%'

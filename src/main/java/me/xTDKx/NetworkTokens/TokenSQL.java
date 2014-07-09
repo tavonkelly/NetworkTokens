@@ -22,6 +22,7 @@ public class TokenSQL {
    public boolean canConnect(){
       try {
           connection = DriverManager.getConnection("jdbc:mysql://" + plugin.getConfig().getString("Database Address") + ":" + plugin.getConfig().getString("Database Port") + "/" + plugin.getConfig().getString("Database Name"), plugin.getConfig().getString("Database User"), plugin.getConfig().getString("Database Password"));
+          //connection = DriverManager.getConnection("jdbc:mysql://mysql-east.getnodecraft.net:3306/mcs_5437", "mcs_5437", "39abedaf30");
           return true;
       }catch (Exception e){
           return false;
