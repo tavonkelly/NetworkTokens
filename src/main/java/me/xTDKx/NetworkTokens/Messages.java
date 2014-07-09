@@ -27,7 +27,6 @@ public class Messages {
             Bukkit.getLogger().severe("Couldn't save messages, because: " + e.getMessage());
         }
     }
-
     public static FileConfiguration getMessages() {
         return messages;
     }
